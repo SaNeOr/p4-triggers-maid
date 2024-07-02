@@ -145,7 +145,7 @@ def mix_commands(original_commands: List[Command], new_commands: List[Command]) 
         for original_command in filtered_list:
             if (command.trigger_on == original_command.trigger_on
                     and command.depot_path == original_command.depot_path
-                    and original_command.command == original_command.command):
+                    and command.command == original_command.command):
                 is_exist = True
                 break
         if not is_exist:
