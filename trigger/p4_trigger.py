@@ -42,6 +42,9 @@ class P4Trigger(ABC):
         if not self.files:
             return True
 
+        if self.user and self.trigger_filter.super_user and self.user in self.trigger_filter.super_user:
+            return True
+
         if (self.trigger_filter.check_stream and self.stream
                 and self.stream not in self.trigger_filter.check_stream):
             return True
